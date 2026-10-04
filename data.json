@@ -25,8 +25,14 @@
     }
   ],
 
-  "certifications": [],
-
+  "certifications": [
+    {
+      "name": "Formula SAE Chassis Analysis",
+      "issuer": "Anysys",
+      "date": "2026",
+      "url":"https://innovation.ansys.com/badges/badge/Zm9ybXVsYS1zYWUtY2hhc3Npcy1hbmFseXNpcy0zNzc=",
+    }
+  ],
   "badges": [],
 
   "services": [
