@@ -3,347 +3,374 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>nebula</title>
+<title>Riddick Burke-Garrison · Robotics Programmer &amp; Technician</title>
+<meta name="description" content="Robotics programmer, computer technician, and A/V technician in Bonners Ferry, Idaho."/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg:        #0d0d0d;
-  --surface:   #141414;
-  --surface2:  #1a1a1a;
-  --surface3:  #222222;
-  --border:    #2a2a2a;
-  --border2:   #383838;
-  --text:      #e0e0e0;
-  --text-dim:  #888;
-  --text-faint:#555;
-  --accent:    #e0e0e0;
-  --accent-hl: #ffffff;
-  --mono: 'JetBrains Mono', monospace;
+  --bg: #f5f6f8;
+  --surface: #ffffff;
+  --ink: #161a20;
+  --muted: #5a6472;
+  --line: #dfe3e8;
+  --accent: #1f5f8b;
+  --accent-soft: #e6eff6;
+  --sans: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --serif: 'IBM Plex Serif', Georgia, serif;
 }
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:var(--mono);
-  font-size:13px;
-  line-height:1.65;
-  min-height:100vh;
-}
-.page{max-width:900px;margin:0 auto;padding:3rem 2rem 5rem}
-
-/* ── HEADER ── */
-.header{
-  display:grid;
-  grid-template-columns:auto 1fr;
-  gap:2.5rem;
-  align-items:start;
-  margin-bottom:3rem;
-  padding-bottom:2.5rem;
-  border-bottom:1px solid var(--border);
-}
-@media(max-width:600px){
-  .header{grid-template-columns:1fr;gap:1.5rem}
-  .photo-wrap{margin:0 auto}
-}
-.photo-wrap{
-  width:300px;height:300px;
-  border:1px solid var(--border2);
-  border-radius:4px;
-  overflow:hidden;
-  flex-shrink:0;
-  background:var(--surface2);
-  position:relative;
-}
-.photo-wrap img{width:100%;height:100%;object-fit:cover;display:block}
-.photo-placeholder{
-  width:100%;height:100%;
-  display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
-  gap:.4rem;
-  color:var(--text-faint);
-  font-size:10px;
-  letter-spacing:.08em;
-  text-align:center;
-  padding:.5rem;
-}
-.photo-placeholder svg{opacity:.3}
-.identity{display:flex;flex-direction:column;gap:.3rem;padding-top:.2rem}
-.ascii-name{
-  font-size:10px;
-  line-height:1.15;
-  color:var(--text-dim);
-  white-space:pre;
-  margin-bottom:.6rem;
-  overflow-x:auto;
-}
-.fullname{font-size:1.45rem;font-weight:700;color:var(--accent-hl);letter-spacing:.02em}
-.role{font-size:12px;color:var(--text-dim);margin-bottom:.8rem}
-.contact-grid{
-  display:flex;flex-direction:column;gap:.25rem;
-}
-.contact-row{
-  display:flex;align-items:center;gap:.6rem;
-  font-size:11px;color:var(--text-dim);
-}
-.contact-row a{color:var(--text-dim);text-decoration:none;transition:color .15s}
-.contact-row a:hover{color:var(--text)}
-.c-label{color:var(--text-faint);min-width:56px}
-
-/* ── SECTION HEADER ── */
-.section{margin-bottom:2.8rem}
-.sec-label{
-  font-size:10px;
-  font-weight:700;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  color:var(--text-faint);
-  margin-bottom:1.2rem;
-  display:flex;align-items:center;gap:.8rem;
-}
-.sec-label::after{content:'';flex:1;height:1px;background:var(--border)}
-
-/* ── EXPERIENCE / SERVICES CARDS ── */
-.exp-list{display:flex;flex-direction:column;gap:.6rem}
-.exp-card{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:3px;
-  cursor:pointer;
-  transition:border-color .18s;
-}
-.exp-card:hover{border-color:var(--border2)}
-.exp-card.open{border-color:var(--border2)}
-.exp-header{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:.85rem 1.1rem;
-  gap:1rem;
-}
-.exp-left{display:flex;flex-direction:column;gap:.15rem}
-.exp-role{font-size:13px;font-weight:600;color:var(--text)}
-.exp-org{font-size:11px;color:var(--text-dim)}
-.exp-right{display:flex;align-items:center;gap:1rem;flex-shrink:0}
-.exp-period{font-size:10px;color:var(--text-faint);white-space:nowrap}
-.exp-chevron{
-  color:var(--text-faint);
-  font-size:11px;
-  transition:transform .2s;
-  user-select:none;
-}
-.exp-card.open .exp-chevron{transform:rotate(180deg)}
-.exp-body{
-  display:none;
-  padding:0 1.1rem 1.1rem;
-  border-top:1px solid var(--border);
-}
-.exp-card.open .exp-body{display:block;padding-top:1rem}
-.exp-desc{font-size:12px;color:var(--text-dim);line-height:1.7;margin-bottom:.8rem}
-.exp-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.6rem}
-.tag{
-  font-size:10px;letter-spacing:.07em;
-  border:1px solid var(--border2);
-  color:var(--text-faint);
-  padding:.15rem .55rem;
-  border-radius:2px;
-}
-.exp-images{
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
-  gap:.6rem;margin-top:.9rem;
-}
-.exp-images img{
-  width:100%;border-radius:2px;
-  border:1px solid var(--border);
-  object-fit:cover;
-  max-height:140px;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1216;
+    --surface: #161b21;
+    --ink: #e7eaee;
+    --muted: #9aa4b1;
+    --line: #262d36;
+    --accent: #6fb0e0;
+    --accent-soft: #1a2733;
+  }
 }
 
-/* ── FOOTER NAV ── */
-.footer-nav{
-  display:flex;align-items:center;justify-content:space-between;
-  flex-wrap:wrap;gap:1rem;
-  padding-top:2rem;
-  border-top:1px solid var(--border);
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
-.footer-note{font-size:11px;color:var(--text-faint)}
-.btn{
-  display:inline-flex;align-items:center;gap:.45rem;
-  font-family:var(--mono);
-  font-size:11px;font-weight:600;
-  letter-spacing:.1em;text-transform:uppercase;
-  padding:.55rem 1.2rem;
-  border-radius:3px;
-  border:1px solid var(--border2);
-  background:var(--surface2);
-  color:var(--text);
-  text-decoration:none;
-  cursor:pointer;
-  transition:background .15s,border-color .15s,color .15s;
-}
-.btn:hover{background:var(--surface3);border-color:var(--text-faint)}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
 
-/* ── LOADING ── */
-#loading{
-  position:fixed;inset:0;
-  background:var(--bg);
-  display:flex;align-items:center;justify-content:center;
-  z-index:100;
+/* ── LAYOUT ── */
+.page {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 4rem 2rem 5rem;
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 4rem;
 }
-#loading.hidden{display:none}
-.loading-text{
-  color:var(--text-faint);
-  font-size:11px;
-  letter-spacing:2px;
+.rail { position: sticky; top: 3rem; align-self: start; }
+.main { min-width: 0; }
+
+/* ── RAIL ── */
+.photo-wrap {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--accent-soft);
+  border: 1px solid var(--line);
+  margin-bottom: 1.5rem;
+}
+.photo-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.photo-initials {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif);
+  font-size: 3.5rem;
+  color: var(--accent);
+}
+.name {
+  font-family: var(--serif);
+  font-size: 1.75rem;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.role { color: var(--muted); margin: .5rem 0 1.5rem; font-size: .95rem; }
+.contact { list-style: none; display: grid; gap: .6rem; font-size: .9rem; }
+.contact li { display: grid; gap: .1rem; }
+.contact .label { color: var(--muted); font-size: .8rem; }
+.contact a, .contact span.val { color: var(--ink); word-break: break-word; }
+.contact a:hover { color: var(--accent); }
+.cta {
+  display: inline-block;
+  margin-top: 1.75rem;
+  padding: .6rem 1.1rem;
+  border-radius: 4px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 500;
+  font-size: .9rem;
+}
+.cta:hover { text-decoration: none; filter: brightness(1.1); }
+@media (prefers-color-scheme: dark) { .cta { color: #0f1216; } }
+
+/* ── SECTIONS ── */
+.section { margin-bottom: 3rem; }
+.section h2 {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding-bottom: .6rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--line);
+}
+.summary { font-size: 1.05rem; max-width: 62ch; }
+
+/* ── ENTRIES (experience, certifications, services) ── */
+.entry { padding: 0 0 1.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--line); }
+.entry:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+.entry-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+.entry-title { font-weight: 600; font-size: 1.05rem; }
+.entry-meta { color: var(--muted); font-size: .9rem; white-space: nowrap; }
+.entry-sub { color: var(--muted); font-size: .92rem; }
+.entry-desc { margin-top: .6rem; max-width: 68ch; font-size: .95rem; }
+.tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .8rem; list-style: none; }
+.tags li {
+  font-size: .8rem;
+  padding: .1rem .6rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.price { font-weight: 500; color: var(--accent); font-size: .92rem; }
+
+/* ── BADGES ── */
+.badge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+  list-style: none;
+}
+.badge {
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  gap: .6rem;
+  height: 100%;
+  padding: 1.1rem .8rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--ink);
+}
+a.badge:hover { border-color: var(--accent); text-decoration: none; }
+.badge-img {
+  width: 84px; height: 84px;
+  display: flex; align-items: center; justify-content: center;
+}
+.badge-img img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.badge-fallback {
+  width: 84px; height: 84px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--accent-soft); color: var(--accent);
+  font-family: var(--serif); font-weight: 600; font-size: 1.4rem;
+}
+.badge-name { font-size: .88rem; font-weight: 500; line-height: 1.3; }
+.badge-issuer { font-size: .78rem; color: var(--muted); }
+
+/* ── STATUS ── */
+#status { padding: 4rem 2rem; text-align: center; color: var(--muted); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 800px) {
+  .page { grid-template-columns: 1fr; gap: 2.5rem; padding: 2.5rem 1.25rem 4rem; }
+  .rail { position: static; }
+  .photo-wrap { max-width: 220px; }
+}
+
+/* ── PRINT ── */
+@media print {
+  :root { --bg: #fff; --surface: #fff; --ink: #000; --muted: #444; --line: #ccc; --accent: #1f5f8b; --accent-soft: #eee; }
+  .cta { display: none; }
+  .rail { position: static; }
+  .page { padding: 0; }
 }
 </style>
 </head>
 <body>
-<div id="loading"><span class="loading-text">loading...</span></div>
 
-<div class="page" id="page" style="display:none">
-  <!-- ══ HEADER ══ -->
-  <div class="header">
+<div id="status" role="status">Loading…</div>
+
+<div class="page" id="page" hidden>
+
+  <!-- ══ LEFT RAIL ══ -->
+  <aside class="rail">
     <div class="photo-wrap">
-      <img id="profile-img" src="photo.jpg" alt="Profile photo" style="display:none">
-      <div class="photo-placeholder" id="photo-ph">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-        </svg>
-        <span>add photo.jpg</span>
-      </div>
+      <img id="profile-img" src="photo.jpg" alt="Portrait of Riddick Burke-Garrison" hidden>
+      <div class="photo-initials" id="photo-initials" aria-hidden="true">RB</div>
     </div>
-    <div class="identity">
-      <pre class="ascii-name">
-███╗   ██╗███████╗██████╗ ██╗   ██╗██╗      █████╗ 
-████╗  ██║██╔════╝██╔══██╗██║   ██║██║     ██╔══██╗
-██╔██╗ ██║█████╗  ██████╔╝██║   ██║██║     ███████║
-██║╚██╗██║██╔══╝  ██╔══██╗██║   ██║██║     ██╔══██║
-██║ ╚████║███████╗██████╔╝╚██████╔╝███████╗██║  ██║
-╚═╝  ╚═══╝╚══════╝╚═════╝  ╚═════╝ ╚══════╝╚═╝  ╚═╝
-                                                   </pre>
-      <div class="fullname">Riddick Burke-Garrison</div>
-      <div class="role">Robotics Programmer · Computer Technician · A/V Technician</div>
-      <div class="contact-grid">
-        <div class="contact-row">
-          <span class="c-label">email</span>
-          <a href="mailto:riddickburke7@gmail.com">riddickburke7@gmail.com</a>
-        </div>
-        <div class="contact-row">
-          <span class="c-label">github</span>
-          <a href="https://github.com/nebula762814" target="_blank">github.com/nebula762814</a>
-        </div>
-        <div class="contact-row">
-          <span class="c-label">location</span>
-          <span>Bonners Ferry, ID</span>
-        </div>
-        <div class="contact-row">
-          <span class="c-label">phone</span>
-          <a href="tel:986-205-3253">986-205-3253</a>
-        </div>
-      </div>
-    </div>
-  </div>
+    <h1 class="name">Riddick Burke-Garrison</h1>
+    <p class="role">Robotics Programmer, Computer Technician, A/V Technician</p>
+    <ul class="contact">
+      <li><span class="label">Email</span><a href="mailto:riddickburke7@gmail.com">riddickburke7@gmail.com</a></li>
+      <li><span class="label">Phone</span><a href="tel:+19862053253">986-205-3253</a></li>
+      <li><span class="label">GitHub</span><a href="https://github.com/nebula762814" target="_blank" rel="noopener">github.com/nebula762814</a></li>
+      <li><span class="label">Location</span><span class="val">Bonners Ferry, ID</span></li>
+    </ul>
+    <a class="cta" href="mailto:riddickburke7@gmail.com">Get in touch</a>
+  </aside>
 
-  <!-- ══ EXPERIENCE ══ -->
-  <div class="section">
-    <div class="sec-label">experience</div>
-    <div class="exp-list" id="experience-list"></div>
-  </div>
+  <!-- ══ MAIN ══ -->
+  <main class="main">
 
-  <!-- ══ SERVICES ══ -->
-  <div class="section">
-    <div class="sec-label">services offered</div>
-    <div class="exp-list" id="services-list"></div>
-  </div>
+    <section class="section" id="about-section" hidden>
+      <h2>About</h2>
+      <p class="summary" id="summary"></p>
+    </section>
 
-  <!-- ══ FOOTER NAV ══ -->
-  <div class="footer-nav">
-    <span class="footer-note">available for projects &amp; collaboration</span>
-    <a href="projects.html" class="btn">view projects →</a>
-  </div>
+    <section class="section" id="experience-section" hidden>
+      <h2>Experience</h2>
+      <div id="experience-list"></div>
+    </section>
+
+    <section class="section" id="certifications-section" hidden>
+      <h2>Certifications</h2>
+      <div id="certifications-list"></div>
+    </section>
+
+    <section class="section" id="badges-section" hidden>
+      <h2>Badges</h2>
+      <ul class="badge-grid" id="badges-list"></ul>
+    </section>
+
+    <section class="section" id="services-section" hidden>
+      <h2>Services</h2>
+      <div id="services-list"></div>
+    </section>
+
+  </main>
 </div>
 
 <script>
-let portfolioData = {projects:[],experience:[],services:[]};
+const $ = id => document.getElementById(id);
 
-async function loadData(){
-  try{
-    let json;
-    try{
-      const r = await fetch('data.json?t=' + Date.now());
-      json = await r.json();
-    } catch(fetchErr){
-      // Fallback for file:// protocol
-      const xhr = new XMLHttpRequest();
-      xhr.open('GET', 'data.json', false);
-      xhr.send(null);
-      if(xhr.status === 0 || xhr.status === 200){
-        json = JSON.parse(xhr.responseText);
-      } else {
-        throw new Error('Failed to load');
-      }
-    }
-    portfolioData = json;
-    renderPage();
-    document.getElementById('loading').classList.add('hidden');
-    document.getElementById('page').style.display = '';
-  } catch(e){
-    document.querySelector('.loading-text').textContent = 'failed to load data.json — try using a local server';
-  }
+function esc(s) {
+  return String(s == null ? '' : s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
-function renderPage(){
-  renderExp('experience', portfolioData.experience || [], 'experience-list');
-  renderExp('services', portfolioData.services || [], 'services-list');
+// Only allow http(s) and relative links from data.json
+function safeUrl(u) {
+  if (!u) return '';
+  const s = String(u).trim();
+  if (/^(https?:)?\/\//i.test(s)) return /^(https?:)/i.test(s) || s.startsWith('//') ? s : '';
+  if (/^[a-z][a-z0-9+.-]*:/i.test(s)) return '';
+  return s;
 }
 
-function renderExp(type, items, containerId){
-  const container = document.getElementById(containerId);
-  if(!items.length){
-    container.innerHTML = '<div style="color:var(--text-faint);font-size:11px;padding:1rem 0">no items yet</div>';
-    return;
-  }
-  container.innerHTML = items.map(item => {
-    const tags = (item.tags || []).map(t => `<span class="tag">${esc(t)}</span>`).join('');
-    const images = (item.images || []).map(src => 
-      `<img src="${esc(src)}" alt="" onerror="this.style.display='none'">`
-    ).join('');
-    return `
-      <div class="exp-card" onclick="toggleExp(this)">
-        <div class="exp-header">
-          <div class="exp-left">
-            <span class="exp-role">${esc(item.role)}</span>
-            <span class="exp-org">${esc(item.org)}</span>
-          </div>
-          <div class="exp-right">
-            <span class="exp-period">${esc(item.period)}</span>
-            <span class="exp-chevron">▾</span>
-          </div>
-        </div>
-        <div class="exp-body">
-          <div class="exp-desc">${esc(item.desc)}</div>
-          ${tags ? `<div class="exp-tags">${tags}</div>` : ''}
-          ${images ? `<div class="exp-images">${images}</div>` : ''}
-        </div>
+function initials(name) {
+  return String(name || '?').split(/\s+/).filter(Boolean).slice(0, 2)
+    .map(w => w[0].toUpperCase()).join('');
+}
+
+function show(sectionId) { $(sectionId).hidden = false; }
+
+/* ── Renderers ── */
+function renderTags(tags) {
+  if (!tags || !tags.length) return '';
+  return `<ul class="tags">${tags.map(t => `<li>${esc(t)}</li>`).join('')}</ul>`;
+}
+
+function renderExperience(items) {
+  if (!items.length) return;
+  $('experience-list').innerHTML = items.map(i => `
+    <article class="entry">
+      <div class="entry-head">
+        <h3 class="entry-title">${esc(i.role)}</h3>
+        ${i.period ? `<span class="entry-meta">${esc(i.period)}</span>` : ''}
       </div>
-    `;
+      ${i.org ? `<div class="entry-sub">${esc(i.org)}</div>` : ''}
+      ${i.desc ? `<p class="entry-desc">${esc(i.desc)}</p>` : ''}
+      ${renderTags(i.tags)}
+    </article>`).join('');
+  show('experience-section');
+}
+
+function renderCertifications(items) {
+  if (!items.length) return;
+  $('certifications-list').innerHTML = items.map(c => {
+    const url = safeUrl(c.url);
+    const title = url
+      ? `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(c.name)}</a>`
+      : esc(c.name);
+    const meta = [c.date, c.credentialId ? `ID ${c.credentialId}` : ''].filter(Boolean).map(esc).join(' · ');
+    return `
+    <article class="entry">
+      <div class="entry-head">
+        <h3 class="entry-title">${title}</h3>
+        ${c.date ? `<span class="entry-meta">${esc(c.date)}</span>` : ''}
+      </div>
+      ${c.issuer ? `<div class="entry-sub">${esc(c.issuer)}</div>` : ''}
+      ${c.credentialId ? `<div class="entry-sub">Credential ID: ${esc(c.credentialId)}</div>` : ''}
+      ${c.desc ? `<p class="entry-desc">${esc(c.desc)}</p>` : ''}
+    </article>`;
   }).join('');
+  show('certifications-section');
 }
 
-function toggleExp(card){
-  card.classList.toggle('open');
+function renderBadges(items) {
+  if (!items.length) return;
+  $('badges-list').innerHTML = items.map(b => {
+    const url = safeUrl(b.url);
+    const img = safeUrl(b.image);
+    const inner = `
+      <div class="badge-img">
+        ${img ? `<img src="${esc(img)}" alt="${esc(b.name)} badge" loading="lazy">` : ''}
+        <div class="badge-fallback" ${img ? 'hidden' : ''} aria-hidden="true">${esc(initials(b.name))}</div>
+      </div>
+      <div class="badge-name">${esc(b.name)}</div>
+      ${b.issuer ? `<div class="badge-issuer">${esc(b.issuer)}</div>` : ''}`;
+    return url
+      ? `<li><a class="badge" href="${esc(url)}" target="_blank" rel="noopener">${inner}</a></li>`
+      : `<li><div class="badge">${inner}</div></li>`;
+  }).join('');
+
+  // If a badge image fails to load, show the initials tile instead
+  document.querySelectorAll('#badges-list img').forEach(img => {
+    img.addEventListener('error', () => {
+      img.hidden = true;
+      const fb = img.parentElement.querySelector('.badge-fallback');
+      if (fb) fb.hidden = false;
+    });
+  });
+  show('badges-section');
 }
 
-function esc(s){
-  return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+function renderServices(items) {
+  if (!items.length) return;
+  $('services-list').innerHTML = items.map(s => `
+    <article class="entry">
+      <div class="entry-head">
+        <h3 class="entry-title">${esc(s.role)}</h3>
+        ${s.price ? `<span class="price">${esc(s.price)}</span>` : ''}
+      </div>
+      ${s.org ? `<div class="entry-sub">${esc(s.org)}</div>` : ''}
+      ${s.desc ? `<p class="entry-desc">${esc(s.desc)}</p>` : ''}
+    </article>`).join('');
+  show('services-section');
 }
 
-// Show profile image if it loads
+/* ── Load ── */
+async function loadData() {
+  try {
+    const res = await fetch('data.json?t=' + Date.now());
+    if (!res.ok) throw new Error(res.status);
+    const data = await res.json();
+
+    if (data.summary) { $('summary').textContent = data.summary; show('about-section'); }
+    renderExperience(data.experience || []);
+    renderCertifications(data.certifications || []);
+    renderBadges(data.badges || []);
+    renderServices(data.services || []);
+
+    $('status').hidden = true;
+    $('page').hidden = false;
+  } catch (e) {
+    $('status').textContent = 'Could not load data.json. If you opened this file directly, run a local server (for example: python3 -m http.server).';
+  }
+}
+
 window.addEventListener('DOMContentLoaded', () => {
-  const img = document.getElementById('profile-img');
-  const ph = document.getElementById('photo-ph');
-  img.onload = () => { img.style.display = 'block'; ph.style.display = 'none'; };
-  img.onerror = () => { img.style.display = 'none'; };
+  const img = $('profile-img');
+  img.addEventListener('load', () => { img.hidden = false; $('photo-initials').hidden = true; });
+  img.addEventListener('error', () => { img.hidden = true; });
   loadData();
 });
 </script>

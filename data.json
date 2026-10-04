@@ -1,108 +1,52 @@
 {
-  "projects": [
-    {
-      "id": "proj-nebula",
-      "name": "Personal App Suite",
-      "short": "Self-hosted web apps tailored to me and made from scratch",
-      "tag": "Web",
-      "thumb": "nebula-thumb.jpg",
-      "hero": "",
-      "subtitle": "homelab · 2024 – present",
-      "about": [
-        "A cohesive set of self-hosted web applications running on a Mac Mini, all sharing a unified theme and served via Python HTTP servers managed by launchd on tailscale ports",
-        "A custom music server and streamer pointing at a local library, a TUI-style notes app built with Python and Textual that syncs to GitHub. A dashboard for all my servers and apps that is also a custom broswer startpage"
-      ],
-      "stack": [
-        "Python",
-        "FastAPI",
-        "Textual",
-        "HTML/CSS",
-        "launchd",
-        "Mac Mini",
-        "Tailscale"
-      ],
-      "gallery": [],
-      "links": [
-        {
-          "label": "Notes-TUI repo",
-          "url": "https://github.com/Nebula762814/Notes-TUI"
-        }
-      ]
-    },
-    {
-      "id": "proj-Ipod5.5",
-      "name": "iPod 5.5 Generation",
-      "short": "Single Use Devices Are Back!",
-      "tag": "Hardware",
-      "thumb": "Ipod5.JPG",
-      "hero": "",
-      "subtitle": "robotics · FRC Team 2130 Alpha · 2026 season",
-      "about": [
-        "Ipods are so back and im here for all of it! This is a iPod 5.5 gen 30gb i got for a steal of $50. In the future I plan to do a case swap with a clear case, bluetooth mod so i can use my airpods and put in some more storage with a flash mod however with storage prices nowadays who knows when that will be!",
-        ""
-      ],
-      "stack": [],
-      "gallery": [],
-      "links": []
-    }
-  ],
+  "summary": "Robotics programmer, computer technician, and A/V technician based in Bonners Ferry, Idaho. I write robot software for FRC Team 2130 Alpha, run live sound and lighting for theater events, and repair electronics for people in my community.",
+
   "experience": [
     {
-      "id": "exp-frc",
-      "role": "FRC Robotics Programmer And CAD Team",
+      "role": "FRC Robotics Programmer and CAD Team",
       "org": "Team 2130 Alpha",
       "period": "",
-      "desc": "Lead programmer on a competitive FRC robotics team. Responsible for the full software stack on the 2026 season robot including swerve drive, autonomous path planning, and vision-based target tracking. Worked in a six-subsystem command-based architecture with WPILib Java, integrated PhotonVision across dual cameras, and built autonomous routines using PathPlannerLib. Also managed driver-station tooling via Smart Dashboard.",
-      "tags": [],
-      "images": []
+      "desc": "Lead programmer on a competitive FRC robotics team. Responsible for the full software stack on the 2026 season robot, including swerve drive, autonomous path planning, and vision-based target tracking. Worked in a six-subsystem command-based architecture with WPILib Java, integrated PhotonVision across dual cameras, and built autonomous routines using PathPlannerLib. Also managed driver-station tooling through SmartDashboard.",
+      "tags": ["Java", "WPILib", "PhotonVision", "PathPlanner", "CAD"]
     },
     {
-      "id": "exp-av",
       "role": "Audio / Visual Technician",
       "org": "Becker Auditorium",
       "period": "",
       "desc": "Operate live sound, lighting, and projection systems for performances and events. Responsible for pre-show setup, live mixing, and post-event teardown. Comfortable with both front-of-house and monitor mixing, and coordinating with production staff.",
-      "tags": [
-        "Live Sound",
-        "Lighting Control",
-        "Projection"
-      ],
-      "images": []
+      "tags": ["Live Sound", "Lighting Control", "Projection"]
     },
     {
-      "id": "exp-repair",
       "role": "Community Electronics Repair",
-      "org": "Personal",
+      "org": "Independent",
       "period": "",
-      "desc": "I have repaired many devices among members of the community including Android and Apple smartphones, Apple and Windows personal computers, and many others.",
-      "tags": [],
-      "images": []
+      "desc": "Repaired many devices for members of the community, including Android and Apple smartphones, Apple and Windows personal computers, and other electronics.",
+      "tags": []
     }
   ],
+
+  "certifications": [],
+
+  "badges": [],
+
   "services": [
     {
-      "id": "svc-repair",
       "role": "Electronics Repair",
-      "org": "Phone · Computer · Misc",
-      "desc": "Repair and upgrade devices including smartphones, laptops, desktops, audio systems, gaming consoles. Willing to assist setting up new technology and transfer data between devices. Will work on any brand or operating system. Price: Replacement Part Cost + $20 per hour",
-      "tags": [],
-      "images": []
+      "org": "Phones, computers, and more",
+      "price": "Parts cost + $20/hr",
+      "desc": "Repair and upgrade of smartphones, laptops, desktops, audio systems, and gaming consoles. Happy to help set up new technology and transfer data between devices. Works on any brand or operating system."
     },
     {
-      "id": "svc-3d",
-      "role": "Small Scale 3D Printing",
+      "role": "Small-Scale 3D Printing",
       "org": "",
-      "desc": "Will 3d print items 200mm x 200mm x 200mm or smaller. Limited to 10 items per order. Will 3d model basic items if needed. Price: $5 per item + $5 modeling fee.",
-      "tags": [],
-      "images": []
+      "price": "$5 per item + $5 modeling fee",
+      "desc": "Prints items up to 200 × 200 × 200 mm, limited to 10 items per order. Basic 3D modeling available if needed."
     },
     {
-      "id": "svc-av",
-      "role": "Lights And Sound Theater Technician",
+      "role": "Lights and Sound Theater Technician",
       "org": "",
-      "desc": "Full production support for live events: front-of-house sound, monitor mixing, stage lighting, and projection. Experienced with setup, operation, and teardown for performances of varying scale. Must provide equipment (Mics, Sound Board, Speakers) Price: $60 Per Hour (Min 1)",
-      "tags": [],
-      "images": []
+      "price": "$60/hr (1 hour minimum)",
+      "desc": "Full production support for live events: front-of-house sound, monitor mixing, stage lighting, and projection. Experienced with setup, operation, and teardown for performances of varying scale. Client provides equipment (mics, sound board, speakers)."
     }
   ]
 }
