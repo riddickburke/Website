@@ -1,58 +1,44 @@
 {
   "summary": "Robotics programmer, computer technician, and A/V technician based in Bonners Ferry, Idaho. I write robot software for FRC Team 2130 Alpha, run live sound and lighting for theater events, and repair electronics for people in my community.",
-
   "experience": [
     {
-      "role": "FRC Robotics Programmer and CAD Team",
+      "role": "FRC Robotics Programmer",
       "org": "Team 2130 Alpha",
       "period": "",
       "desc": "Lead programmer on a competitive FRC robotics team. Responsible for the full software stack on the 2026 season robot, including swerve drive, autonomous path planning, and vision-based target tracking. Worked in a six-subsystem command-based architecture with WPILib Java, integrated PhotonVision across dual cameras, and built autonomous routines using PathPlannerLib. Also managed driver-station tooling through SmartDashboard.",
-      "tags": ["Java", "WPILib", "PhotonVision", "PathPlanner", "CAD"]
+      "tags": [
+        "Java",
+        "WPILib",
+        "PhotonVision",
+        "PathPlanner",
+        "CAD"
+      ]
     },
     {
-      "role": "Audio / Visual Technician",
-      "org": "Becker Auditorium",
+      "role": "Lead of CAD and Design",
+      "org": "Team 2130 Alpha",
       "period": "",
-      "desc": "Operate live sound, lighting, and projection systems for performances and events. Responsible for pre-show setup, live mixing, and post-event teardown. Comfortable with both front-of-house and monitor mixing, and coordinating with production staff.",
-      "tags": ["Live Sound", "Lighting Control", "Projection"]
-    },
-    {
-      "role": "Community Electronics Repair",
-      "org": "Independent",
-      "period": "",
-      "desc": "Repaired many devices for members of the community, including Android and Apple smartphones, Apple and Windows personal computers, and other electronics.",
-      "tags": []
+      "desc": "Lead designer on a competitive FRC robotics team. Assisted in the full mechanical design of the 2026 season robot, including CAD modeling, assembly, and part selection. Designed and built a swerve drive system with custom gearboxes, and integrated sensors and electronics into the mechanical design.",
+      "tags": [
+        "CAD",
+        "Mechanical Design",
+        "3D Modeling"
+      ]
     }
   ],
-
   "certifications": [
     {
       "name": "Formula SAE Chassis Analysis",
-      "issuer": "Anysys",
+      "issuer": "Ansys",
       "date": "2026",
-      "url":"https://innovation.ansys.com/badges/badge/Zm9ybXVsYS1zYWUtY2hhc3Npcy1hbmFseXNpcy0zNzc=",
+      "url": "https://innovation.ansys.com/badges/badge/Zm9ybXVsYS1zYWUtY2hhc3Npcy1hbmFseXNpcy0zNzc="
     }
   ],
-  "badges": [],
-
-  "services": [
+  "badges": [
     {
-      "role": "Electronics Repair",
-      "org": "Phones, computers, and more",
-      "price": "Parts cost + $20/hr",
-      "desc": "Repair and upgrade of smartphones, laptops, desktops, audio systems, and gaming consoles. Happy to help set up new technology and transfer data between devices. Works on any brand or operating system."
-    },
-    {
-      "role": "Small-Scale 3D Printing",
-      "org": "",
-      "price": "$5 per item + $5 modeling fee",
-      "desc": "Prints items up to 200 × 200 × 200 mm, limited to 10 items per order. Basic 3D modeling available if needed."
-    },
-    {
-      "role": "Lights and Sound Theater Technician",
-      "org": "",
-      "price": "$60/hr (1 hour minimum)",
-      "desc": "Full production support for live events: front-of-house sound, monitor mixing, stage lighting, and projection. Experienced with setup, operation, and teardown for performances of varying scale. Client provides equipment (mics, sound board, speakers)."
+      "name": "Formula SAE Chassis Analysis Completion",
+      "issuer": "Ansys",
+      "image": "SAEBADGE.png"
     }
   ]
 }

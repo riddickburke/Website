@@ -114,7 +114,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 }
 .summary { font-size: 1.05rem; max-width: 62ch; }
 
-/* ── ENTRIES (experience, certifications, services) ── */
+/* ── ENTRIES (experience, certifications) ── */
 .entry { padding: 0 0 1.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--line); }
 .entry:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
 .entry-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
@@ -130,7 +130,6 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   background: var(--accent-soft);
   color: var(--accent);
 }
-.price { font-weight: 500; color: var(--accent); font-size: .92rem; }
 
 /* ── BADGES ── */
 .badge-grid {
@@ -227,11 +226,6 @@ a.badge:hover { border-color: var(--accent); text-decoration: none; }
     <section class="section" id="badges-section" hidden>
       <h2>Badges</h2>
       <ul class="badge-grid" id="badges-list"></ul>
-    </section>
-
-    <section class="section" id="services-section" hidden>
-      <h2>Services</h2>
-      <div id="services-list"></div>
     </section>
 
   </main>
@@ -333,20 +327,6 @@ function renderBadges(items) {
   show('badges-section');
 }
 
-function renderServices(items) {
-  if (!items.length) return;
-  $('services-list').innerHTML = items.map(s => `
-    <article class="entry">
-      <div class="entry-head">
-        <h3 class="entry-title">${esc(s.role)}</h3>
-        ${s.price ? `<span class="price">${esc(s.price)}</span>` : ''}
-      </div>
-      ${s.org ? `<div class="entry-sub">${esc(s.org)}</div>` : ''}
-      ${s.desc ? `<p class="entry-desc">${esc(s.desc)}</p>` : ''}
-    </article>`).join('');
-  show('services-section');
-}
-
 /* ── Load ── */
 async function loadData() {
   try {
@@ -358,7 +338,6 @@ async function loadData() {
     renderExperience(data.experience || []);
     renderCertifications(data.certifications || []);
     renderBadges(data.badges || []);
-    renderServices(data.services || []);
 
     $('status').hidden = true;
     $('page').hidden = false;
