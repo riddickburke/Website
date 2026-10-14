@@ -1,29 +1,32 @@
 {
-  "summary": "Lead Of Programming And Design At FRC Team 2130 Future Computer Engineer | Aspiring Motorsport Technology Engineer | Building Skills in Software, Electronics and Racing",
+  "profile": {
+    "name": "Riddick Burke-Garrison",
+    "headline": "Robotics Programmer & Technician",
+    "tagline": "Building Skills in Software, Electronics and Racing",
+    "location": "Bonners Ferry, ID",
+    "email": "riddickburke7@gmail.com",
+    "phone": "986-205-3253",
+    "photo": "photo.jpg",
+    "links": [
+      { "label": "GitHub", "url": "https://github.com/riddickburke" },
+      { "label": "LinkedIn", "url": "https://www.linkedin.com/in/riddick-burke-garrison-592017441/" }
+    ]
+  },
+  "about": "Lead Of Programming And Design At FRC Team 2130 Future Computer Engineer | Aspiring Motorsport Technology Engineer | Building Skills in Software, Electronics and Racing",
   "experience": [
     {
       "role": "FRC Robotics Programmer",
       "org": "Team 2130 Alpha",
       "period": "",
       "desc": "Lead programmer on a competitive FRC robotics team. Responsible for the full software stack on the 2026 season robot, including swerve drive, autonomous path planning, and vision-based target tracking. Worked in a six-subsystem command-based architecture with WPILib Java, integrated PhotonVision across dual cameras, and built autonomous routines using PathPlannerLib. Also managed driver-station tooling through SmartDashboard.",
-      "tags": [
-        "Java",
-        "WPILib",
-        "PhotonVision",
-        "PathPlanner",
-        "CAD"
-      ]
+      "tags": ["Java", "WPILib", "PhotonVision", "PathPlanner", "CAD"]
     },
     {
       "role": "Lead of CAD and Design",
       "org": "Team 2130 Alpha",
       "period": "",
       "desc": "Lead designer on a competitive FRC robotics team. Assisted in the full mechanical design of the 2026 season robot, including CAD modeling, assembly, and part selection. Designed and built a swerve drive system with custom gearboxes, and integrated sensors and electronics into the mechanical design.",
-      "tags": [
-        "CAD",
-        "Mechanical Design",
-        "3D Modeling"
-      ]
+      "tags": ["CAD", "Mechanical Design", "3D Modeling"]
     }
   ],
   "certifications": [
@@ -31,13 +34,8 @@
       "name": "Formula SAE Chassis Analysis",
       "issuer": "Ansys",
       "date": "2026",
-      "url": "https://innovation.ansys.com/badges/badge/Zm9ybXVsYS1zYWUtY2hhc3Npcy1hbmFseXNpcy0zNzc="
-    }
-  ],
-  "badges": [
-    {
-      "name": "Formula SAE Chassis Analysis Completion",
-      "issuer": "Ansys",
+      "url": "https://innovation.ansys.com/badges/badge/Zm9ybXVsYS1zYWUtY2hhc3Npcy1hbmFseXNpcy0zNzc=",
+      "credentialId": "",
       "image": "SAEBADGE.png"
     }
   ]
