@@ -6,28 +6,29 @@
 <meta name="color-scheme" content="dark">
 <meta name="robots" content="noindex">
 <title>Site editor</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{color-scheme:dark;--bg:#0e0f11;--panel:#15171a;--line:#25282d;--ink:#e8e6e3;--mute:#8d9299;--acc:#f0a23a;--bad:#e5645a;
---mono:ui-monospace,"JetBrains Mono","SF Mono",Menlo,Consolas,monospace;--sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+:root{color-scheme:dark;--bg:#000;--panel:#000;--line:#333;--ink:#fff;--mute:#8a8a8a;--acc:#fff;--bad:#fff;
+--mono:"JetBrains Mono","IBM Plex Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--ink);font:15px/1.5 var(--sans);border-top:3px solid var(--acc)}
+body{background:var(--bg);color:var(--ink);font:14px/1.5 var(--mono);}
 .wrap{max-width:820px;margin:0 auto;padding:0 1.25rem 4rem}
-.top{position:sticky;top:0;z-index:5;background:rgba(14,15,17,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top{position:sticky;top:0;z-index:5;background:rgba(0,0,0,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .top .wrap{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap;padding:.75rem 1.25rem}
 .top h1{font:500 .95rem var(--mono);color:var(--acc);margin-right:auto}
-button,.btn{font:500 .8rem var(--mono);color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:.4rem .75rem;cursor:pointer}
-button:hover,.btn:hover{border-color:var(--acc)}
-.primary{background:var(--acc);color:#111;border-color:var(--acc)}
-.danger:hover{border-color:var(--bad);color:var(--bad)}
-details{margin-top:1.25rem;border:1px solid var(--line);border-radius:6px;background:var(--panel)}
+button,.btn{font:500 .8rem var(--mono);color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:0;padding:.4rem .75rem;cursor:pointer}
+button:hover,.btn:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.primary{border-color:var(--ink)}
+
+details{margin-top:1.25rem;border:1px solid var(--line);border-radius:0;background:var(--panel)}
 summary{padding:.8rem 1rem;font:500 .85rem var(--mono);color:var(--acc);cursor:pointer}
 .body{padding:0 1rem 1rem}
 label{display:block;margin-top:.8rem}
 label span{display:block;font:.75rem var(--mono);color:var(--mute);margin-bottom:.2rem}
-input,textarea{width:100%;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:5px;padding:.5rem .65rem;font:inherit}
+input,textarea{width:100%;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:0;padding:.5rem .65rem;font:inherit}
 input:focus,textarea:focus{outline:none;border-color:var(--acc)}
 textarea{resize:vertical}
-.item{margin-top:1rem;padding:.2rem 1rem 1rem;border:1px solid var(--line);border-left:3px solid var(--acc);border-radius:5px;background:#121416}
+.item{margin-top:1rem;padding:.2rem 1rem 1rem;border:1px solid var(--line);border-left:3px solid var(--acc);border-radius:0;background:#000}
 .bar{display:flex;gap:.4rem;align-items:center;margin-top:.8rem}
 .bar b{margin-right:auto;font-size:.9rem}
 .add{margin-top:1rem}
